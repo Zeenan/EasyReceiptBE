@@ -2,6 +2,11 @@ package com.papafranku.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonInclude(Include.NON_NULL)
 public class ResponseStatus {
 	
 	private Integer code = null;
@@ -23,6 +28,12 @@ public class ResponseStatus {
     
     public ResponseStatus(String msg) {
         super();
+        this.msg = msg;
+    }
+    
+    public ResponseStatus(int code, String msg) {
+        super();
+        this.code = code;
         this.msg = msg;
     }
     

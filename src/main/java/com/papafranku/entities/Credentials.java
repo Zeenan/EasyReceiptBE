@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonInclude(Include.NON_NULL)
 public class Credentials extends ResponseStatus implements Serializable {
 	
-	private String accessToken = null;
+	private String authenticity_token = null; //session token
 	private String username = null;
     private String password = null;
     
@@ -18,9 +18,9 @@ public class Credentials extends ResponseStatus implements Serializable {
     	super();
     }
     
-    public Credentials(String accessToken) {
+    public Credentials(String authenticity_token) {
         super();
-        this.accessToken = accessToken;
+        this.authenticity_token = authenticity_token;
     }
     
     public Credentials(String username, String password) {
@@ -29,18 +29,18 @@ public class Credentials extends ResponseStatus implements Serializable {
         this.password = password;
     }
     
-    public Credentials(String username, String password, String accessToken) {
+    public Credentials(String username, String password, String authenticity_token) {
         super();
         this.username = username;
         this.password = password;
-        this.accessToken = accessToken;
+        this.authenticity_token = authenticity_token;
     }
 
-	public String getAccessToken() {
-		return accessToken;
+	public String getauthenticity_token() {
+		return authenticity_token;
 	}
-	public void setAccessToken(String accessToken) {
-		this.accessToken = accessToken;
+	public void setauthenticity_token(String authenticity_token) {
+		this.authenticity_token = authenticity_token;
 	}
 	public String getUsername() {
 		return username;
