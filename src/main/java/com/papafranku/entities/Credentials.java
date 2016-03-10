@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonInclude(Include.NON_NULL)
 public class Credentials extends ResponseStatus implements Serializable {
 	
+	private String utf8 = null;
+	private String commit = null;
 	private String authenticity_token = null; //session token
 	private String username = null;
     private String password = null;
@@ -54,5 +56,22 @@ public class Credentials extends ResponseStatus implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getUtf8() {
+		return utf8;
+	}
+
+	public void setUtf8(String utf8) {
+		this.utf8 = utf8;
+	}
+
+	public String getCommit() {
+		return commit;
+	}
+
+	public void setCommit(String commit) {
+		this.commit = commit;
+	}
+
 
 }

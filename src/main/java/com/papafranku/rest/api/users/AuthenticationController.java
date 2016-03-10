@@ -90,9 +90,14 @@ public class AuthenticationController extends BaseController{
 			//builder.getUser("ethanSonza");
 			
 			if (WebUtilities.isEmpty(doc)) {
-				return WebUtilities.getResponse(new ResponseStatus("Invalid username or password"));
+				return WebUtilities.getResponse(new ResponseStatus(401, "Invalid username or password"));
 			}
 			user = MongoUtilities.getUser(doc);
+			
+			if (!credentials.getPassword().equals(user.getPassword())) {
+				return WebUtilities.getResponse(new ResponseStatus(401, "Invalid username or password"));
+			}
+			
 			//db.users.find('user.username', 'ethanSonza')
 			System.out.println(user.getFirstName());
 			user.setAuthenticity_token(credentials.getauthenticity_token());
