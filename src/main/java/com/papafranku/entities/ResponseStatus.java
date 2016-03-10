@@ -12,7 +12,21 @@ public class ResponseStatus {
     private List results = null;
     private String error = null;
     
+    public ResponseStatus(Integer code) {
+        super();
+        this.code = code;
+    }
     
+    public ResponseStatus(String msg) {
+        super();
+        this.msg = msg;
+    }
+    
+    public ResponseStatus(Long count, List results) {
+        super();
+        this.count = count;
+        this.results = results;
+    }
     
 	public Integer getCode() {
 		return code;

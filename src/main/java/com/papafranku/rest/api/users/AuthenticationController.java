@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.papafranku.entities.Credentials;
 import com.papafranku.entities.ResponseStatus;
+import com.papafranku.rest.BaseController;
 
 @RestController
 @RequestMapping("/api/users")
