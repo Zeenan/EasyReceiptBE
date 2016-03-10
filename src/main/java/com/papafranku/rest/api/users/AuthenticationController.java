@@ -14,7 +14,7 @@ import com.papafranku.entities.ResponseStatus;
 
 @RestController
 @RequestMapping("/api/users")
-public class AuthenticationController {
+public class AuthenticationController extends BaseController{
 	
 	public AuthenticationController() {
 		
