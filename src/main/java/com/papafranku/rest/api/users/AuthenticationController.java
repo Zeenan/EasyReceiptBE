@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.papafranku.entities.Credentials;
 import com.papafranku.entities.ResponseStatus;
-import com.papafranku.entities.User;
 import com.papafranku.rest.BaseController;
 import com.papafranku.utilities.WebUtilities;
 
@@ -43,52 +42,14 @@ public class AuthenticationController extends BaseController{
 	
 	}
 	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/login", method = {RequestMethod.POST, RequestMethod.OPTIONS})
 	public ResponseEntity<ResponseStatus> login(
-            @RequestBody Credentials credentials, 
+            //@RequestBody Credentials credentials, 
             HttpServletRequest request,
             HttpServletResponse response) {
-		
-		User user = null;
-		
-		try {
-			System.out.println("Someone tried to login" + credentials);
 
-			if (credentials == null) {
-				return WebUtilities.getResponse(new ResponseStatus("Sorry, there are no credentials given."));
-			}
-			
-			if (credentials.getUsername().equals("Ethan")) {
-				
-				if (credentials.getPassword().equals("test1234")) {
-					
-					user = new User();
-					
-					user.setLastName("Sonza");
-					user.setFirstName("Ethan");
-					user.setId(109L);
-					user.setActive(true);
-					user.setEmail("ethan@gmail.com");
-				}
-			}
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
 		
-		if (WebUtilities.isEmpty(user)) {
-			return WebUtilities.getResponse(new ResponseStatus("Incorrect username or password"));
-		}
-		
-		else {
-			ResponseStatus status = null;
-			
-			status = user;
-			
-			return WebUtilities.getResponse(status);
-		}
-		
-		
+		return null;
 	
 	}
 
