@@ -1,11 +1,22 @@
 package com.papafranku.entities;
 
-public class Credentials {
+import java.io.Serializable;
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(Include.NON_NULL)
+public class Credentials extends ResponseStatus implements Serializable {
 	
 	private String accessToken = null;
 	private String username = null;
     private String password = null;
     
+    
+    public Credentials() {
+    	super();
+    }
     
     public Credentials(String accessToken) {
         super();

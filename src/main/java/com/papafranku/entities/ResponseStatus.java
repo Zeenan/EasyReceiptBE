@@ -12,6 +12,10 @@ public class ResponseStatus {
     private List results = null;
     private String error = null;
     
+    public ResponseStatus() {
+    	super();
+    }
+    
     public ResponseStatus(Integer code) {
         super();
         this.code = code;
