@@ -71,7 +71,7 @@ public class AuthenticationController extends BaseController{
 	
 	}
 	
-	@CrossOrigin(origins = {"http://business.easyreceipts.com", "http://www.easyreceipt.com"})
+	@CrossOrigin(origins = {"http://business.easyreceipts.com", "http://www.easyreceipt.com", "http://api.easyreceipts.com"})
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<ResponseStatus> login(
             @RequestBody Credentials credentials, 

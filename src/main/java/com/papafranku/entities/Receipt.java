@@ -67,7 +67,7 @@ public class Receipt extends ResponseStatus {
 		}
 		
 		double check = this.amountPaid - this.total;
-		this.change = (check > 0) ? change : 0;
+		this.change = (check > 0) ? check : 0;
 		
 		this.vatCost = this.total * this.vatPercent;
 		this.vatSale = this.total - this.vatCost;
@@ -154,6 +154,30 @@ public class Receipt extends ResponseStatus {
 
 	public void setAmountPaid(double amountPaid) {
 		this.amountPaid = amountPaid;
+	}
+
+	public String getOwner() {
+		return owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
+	}
+
+	public String getIssuer() {
+		return issuer;
+	}
+
+	public void setIssuer(String issuer) {
+		this.issuer = issuer;
+	}
+
+	public double getVatPercent() {
+		return vatPercent;
+	}
+
+	public void setVatPercent(double vatPercent) {
+		this.vatPercent = vatPercent;
 	}
 	
 	

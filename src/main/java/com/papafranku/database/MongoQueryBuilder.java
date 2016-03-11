@@ -32,6 +32,19 @@ public class MongoQueryBuilder {
 		
 	}
 	
+	public boolean insertData(String collection, Document doc) {
+		
+		try {
+			db.getCollection(collection).insertOne(doc);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+		return true;
+	}
+	
 	public List<Receipt> getReceipts(String username) {
 
 		try {
