@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.bson.Document;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -70,6 +71,7 @@ public class AuthenticationController extends BaseController{
 	
 	}
 	
+	@CrossOrigin(origins = {"http://business.easyreceipts.com", "http://www.easyreceipt.com"})
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<ResponseStatus> login(
             @RequestBody Credentials credentials, 
