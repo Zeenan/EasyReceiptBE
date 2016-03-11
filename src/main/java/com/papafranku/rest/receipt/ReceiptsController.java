@@ -57,6 +57,7 @@ public class ReceiptsController extends BaseController{
 			
 			MongoQueryBuilder builder = new MongoQueryBuilder();
 			receipts = builder.getReceipts(username);
+			count = receipts.size();
 			
 			
 		} catch(Exception e) {
